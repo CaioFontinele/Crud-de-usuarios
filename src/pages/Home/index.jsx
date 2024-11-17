@@ -23,7 +23,7 @@ function Home() {
       age: inputAge.current.value,
       email: inputEmail.current.value
     })
-
+ 
     getUsers()
 
   } 
