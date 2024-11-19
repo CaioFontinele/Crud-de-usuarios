@@ -12,13 +12,13 @@ function Home() {
   const inputEmail = useRef()
 
   async function getUsers(){
-    const usersFromApi = await api.get('/usuarios')
+    const usersFromApi = await api.get('https://users-ebon-nine.vercel.app/usuarios')
 
     setUsers(usersFromApi.data)
   } 
 
   async function createUsers(){
-    await api.post('/usuarios', {
+    await api.post('https://users-ebon-nine.vercel.app/usuarios', {
       name: inputName.current.value,
       age: inputAge.current.value,
       email: inputEmail.current.value
@@ -29,7 +29,7 @@ function Home() {
   } 
 
   async function deleteUsers(id){
-    await api.delete(`/usuarios/${id}`)
+    await api.delete(`https://users-ebon-nine.vercel.app/usuarios/${id}`)
 
     getUsers()
   } 
